@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "../App.css";
 
 class Experience extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   //   removeButton = () => {
   //     document.getElementById("add").remove();
   //   };

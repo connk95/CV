@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "../App.css";
 
 class Education extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div id="educationInput">
@@ -16,13 +12,13 @@ class Education extends Component {
               <div key={index}>
                 <input
                   type="text"
-                  id="instInput"
+                  id="institution"
                   placeholder="Institution"
                 ></input>
                 <br></br>
                 <input
                   type="text"
-                  id="qualifInput"
+                  id="qualification"
                   placeholder="Qualification"
                 ></input>
                 <br></br>

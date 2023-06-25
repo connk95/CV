@@ -3,6 +3,7 @@ import Experience from "./components/Experience";
 import Personal from "./components/Personal";
 import Education from "./components/Education";
 import Skills from "./components/Skills";
+import Resume from "./components/Resume";
 import "./App.css";
 
 class App extends Component {
@@ -28,41 +29,57 @@ class App extends Component {
 
   retrieveData = () => {
     if (this.state.display === "personal") {
-      this.state.personalInfo.name = document.getElementById("name").value;
-      this.state.personalInfo.address =
-        document.getElementById("address").value;
-      this.state.personalInfo.phone = document.getElementById("phone").value;
-      this.state.personalInfo.email = document.getElementById("email").value;
-      console.log(this.state.personalInfo);
+      this.setState({
+        personalInfo: {
+          name: document.getElementById("name").value,
+          address: document.getElementById("address").value,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+        },
+      });
+      document.getElementById("name").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("email").value = "";
     } else if (this.state.display === "experience") {
-      let job = [
-        document.getElementById("position").value,
-        document.getElementById("company").value,
-        document.getElementById("jobStart").value,
-        document.getElementById("jobEnd.value").value,
-      ];
+      let job = {
+        position: document.getElementById("position").value,
+        company: document.getElementById("company").value,
+        jobStart: document.getElementById("jobStart").value,
+        jobEnd: document.getElementById("jobEnd").value,
+      };
       this.state.jobs.push(job);
+      document.getElementById("position").value = "";
+      document.getElementById("company").value = "";
+      document.getElementById("jobStart").value = "";
+      document.getElementById("jobEnd").value = "";
     } else if (this.state.display === "education") {
-      let edu = [
-        document.getElementById("institution").value,
-        document.getElementById("qualification").value,
-        document.getElementById("eduStart").value,
-        document.getElementById("eduEnd.value").value,
-      ];
+      let edu = {
+        institution: document.getElementById("institution").value,
+        qualification: document.getElementById("qualification").value,
+        eduStart: document.getElementById("eduStart").value,
+        eduEnd: document.getElementById("eduEnd").value,
+      };
       this.state.edus.push(edu);
+      document.getElementById("institution").value = "";
+      document.getElementById("qualification").value = "";
+      document.getElementById("eduStart").value = "";
+      document.getElementById("eduEnd").value = "";
     } else if (this.state.display === "skills") {
-      let skill = [
-        document.getElementById("skill").value,
-        document.getElementById("description").value,
-      ];
+      let skill = {
+        skill: document.getElementById("skill").value,
+        discription: document.getElementById("description").value,
+      };
       this.state.skills.push(skill);
+      document.getElementById("skill").value = "";
+      document.getElementById("description").value = "";
     } else {
       return;
     }
   };
 
   handleExtraInfo = (e) => {
-    console.log(this.props.util.expRender);
+    e.preventDefault();
     this.retrieveData();
 
     // FOR FUTURE VERSION, CREATE MULTIPLE FORMS
@@ -79,17 +96,17 @@ class App extends Component {
     e.preventDefault();
     if (this.state.display === "home") {
       this.setState({
-        display: (this.state.display = "personal"),
+        display: "personal",
       });
     } else if (this.state.display === "personal") {
       this.retrieveData();
       this.setState({
-        display: (this.state.display = "skills"),
+        display: "skills",
       });
     } else if (this.state.display === "skills") {
       this.retrieveData();
       this.setState({
-        display: (this.state.display = "experience"),
+        display: "experience",
       });
     } else if (this.state.display === "experience") {
       this.retrieveData();
@@ -105,7 +122,7 @@ class App extends Component {
       //this.setState({ jobs: this.state.jobs.push(job) });
       //}
       this.setState({
-        display: (this.state.display = "education"),
+        display: "education",
         // util: {
         //   expRender: 1,
         // },
@@ -113,7 +130,7 @@ class App extends Component {
     } else if (this.state.display === "education") {
       this.retrieveData();
       this.setState({
-        display: (this.state.display = "resume"),
+        display: "resume",
       });
     } else {
       return;
@@ -169,7 +186,11 @@ class App extends Component {
         </div>
       );
     } else if (display === "resume") {
-      //print resume
+      return (
+        <div>
+          <Resume {...this.state} />
+        </div>
+      );
     }
   }
 }
