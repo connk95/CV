@@ -24,7 +24,6 @@ body {
   width: 70%;
   background-color: white;
   padding: 2rem;
-  /* border-style: double; */
   border: #2c3e50 5px double;
 }
 
@@ -47,21 +46,6 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-/* 
-input[type="submit"] {
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
-} */
 
 h1,
 h2,
@@ -92,8 +76,6 @@ button {
 
 p {
   color: #fff;
-  /* text-align: center; */
-  /* padding-top: 500px; */
   font-size: 16px;
 }
 
@@ -181,12 +163,6 @@ button:hover span:after {
 #education > div {
   margin: 0.5rem;
 }
-
-/* #skills > h2,
-#experience > h2,
-#education > h2 {
-  text-align: center;
-} */
 
 #personal > p {
   text-align: center;
