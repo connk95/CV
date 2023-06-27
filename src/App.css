@@ -1,4 +1,209 @@
-#jobInput {
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#root {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+#resume {
+  width: 70%;
+  background-color: white;
+  padding: 2rem;
+  /* border-style: double; */
+  border: #2c3e50 5px double;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+input,
+select {
+  width: 20rem;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* 
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+} */
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic);
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #2c3e50;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+button {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+p {
+  color: #fff;
+  /* text-align: center; */
+  /* padding-top: 500px; */
+  font-size: 16px;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #2ecc71;
+}
+
+button {
+  text-align: center;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 0 0 0 0px;
+}
+
+button {
+  border-radius: 4px;
+  background-color: #d35400;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.continue span:after {
+  content: "»";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.add span:after {
+  content: "+";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button:hover span {
+  padding-right: 25px;
+}
+
+button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#skills,
+#experience,
+#education {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+#experience > div,
+#education > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#skills > div,
+#experience > div,
+#education > div {
+  margin: 0.5rem;
+}
+
+/* #skills > h2,
+#experience > h2,
+#education > h2 {
+  text-align: center;
+} */
+
+#personal > p {
+  text-align: center;
+}
+
+.dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.display {
+  color: #2c3e50;
 }

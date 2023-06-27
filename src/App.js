@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Home from "./components/Home";
 import Experience from "./components/Experience";
 import Personal from "./components/Personal";
 import Education from "./components/Education";
@@ -11,7 +12,7 @@ class App extends Component {
     super();
 
     this.state = {
-      display: "personal",
+      display: "home",
       personalInfo: {
         name: "",
         address: "",
@@ -21,9 +22,6 @@ class App extends Component {
       jobs: [],
       edus: [],
       skills: [],
-      util: {
-        expRender: 1,
-      },
     };
   }
 
@@ -68,7 +66,7 @@ class App extends Component {
     } else if (this.state.display === "skills") {
       let skill = {
         skill: document.getElementById("skill").value,
-        discription: document.getElementById("description").value,
+        description: document.getElementById("description").value,
       };
       this.state.skills.push(skill);
       document.getElementById("skill").value = "";
@@ -81,15 +79,6 @@ class App extends Component {
   handleExtraInfo = (e) => {
     e.preventDefault();
     this.retrieveData();
-
-    // FOR FUTURE VERSION, CREATE MULTIPLE FORMS
-    // e.preventDefault();
-    // document.getElementById("add").remove();
-    // this.setState({
-    //   util: {
-    //     expRender: this.state.util.expRender + 1,
-    //   },
-    // });
   };
 
   handleContinue = (e) => {
@@ -110,28 +99,15 @@ class App extends Component {
       });
     } else if (this.state.display === "experience") {
       this.retrieveData();
-
-      // FOR FUTURE VERSION, RETRIEVE MULTIPLE FORM DATA AT ONCE
-      // for (let i = 0; i < this.util.expRender; i++) {
-      // let job = [
-      //   document.getElementById(`position${this.state.util.expRender}`).value,
-      //   document.getElementById(`company${this.state.util.expRender}`).value,
-      //   document.getElementById(`jobStart${this.state.util.expRender}`).value,
-      //   document.getElementById(`jobEnd${this.state.util.expRender}`).value,
-      // ];
-      //this.setState({ jobs: this.state.jobs.push(job) });
-      //}
       this.setState({
         display: "education",
-        // util: {
-        //   expRender: 1,
-        // },
       });
     } else if (this.state.display === "education") {
       this.retrieveData();
       this.setState({
         display: "resume",
       });
+      document.querySelectorAll("p").forEach((e) => (e.style.color = "black"));
     } else {
       return;
     }
@@ -139,49 +115,68 @@ class App extends Component {
 
   render() {
     const display = this.state.display;
-    if (this.display === "home") {
-    } else if (display === "personal") {
+    if (display === "home") {
       return (
         <div>
+          <Home />
+          <button
+            className="continue"
+            type="submit"
+            onClick={this.handleContinue}
+          >
+            <span>Start</span>
+          </button>
+        </div>
+      );
+    } else if (display === "personal") {
+      return (
+        <div className="inputs">
           <Personal />
-          <button type="submit" onClick={this.handleContinue}>
-            Continue
+          <button
+            className="continue"
+            type="submit"
+            onClick={this.handleContinue}
+          >
+            <span>Continue</span>
           </button>
         </div>
       );
     } else if (display === "skills") {
       return (
-        <div>
-          <Skills
-            count={this.state.util.expRender}
-            handleExtraInfo={this.handleExtraInfo}
-          />
-          <button type="submit" onClick={this.handleContinue}>
-            Continue
+        <div className="inputs">
+          <Skills handleExtraInfo={this.handleExtraInfo} />
+          <button
+            className="continue"
+            type="submit"
+            onClick={this.handleContinue}
+          >
+            <span>Continue</span>
           </button>
         </div>
       );
     } else if (display === "experience") {
       return (
-        <div>
-          <Experience
-            count={this.state.util.expRender}
-            handleExtraInfo={this.handleExtraInfo}
-          />
-          <button type="submit" onClick={this.handleContinue}>
-            Continue
+        <div className="inputs">
+          <Experience handleExtraInfo={this.handleExtraInfo} />
+          <button
+            className="continue"
+            type="submit"
+            onClick={this.handleContinue}
+          >
+            <span>Continue</span>
           </button>
         </div>
       );
     } else if (display === "education") {
       return (
-        <div>
-          <Education
-            count={this.state.util.expRender}
-            handleExtraInfo={this.handleExtraInfo}
-          />
-          <button type="submit" onClick={this.handleContinue}>
-            Continue
+        <div className="inputs">
+          <Education handleExtraInfo={this.handleExtraInfo} />
+          <button
+            className="continue"
+            type="submit"
+            onClick={this.handleContinue}
+          >
+            <span>Finish</span>
           </button>
         </div>
       );

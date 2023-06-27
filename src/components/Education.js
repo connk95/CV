@@ -6,31 +6,31 @@ class Education extends Component {
     return (
       <div id="educationInput">
         <form>
-          {new Array(this.props.count)
-            .fill("arbitrary value")
-            .map((item, index) => (
-              <div key={index}>
-                <input
-                  type="text"
-                  id="institution"
-                  placeholder="Institution"
-                ></input>
-                <br></br>
-                <input
-                  type="text"
-                  id="qualification"
-                  placeholder="Qualification"
-                ></input>
-                <br></br>
-                <input type="date" id="eduStart"></input>
-                <br></br>
-                <input type="date" id="eduEnd"></input>
-                <br></br>
-                <button onClick={this.props.handleExtraInfo}>
-                  + Education
-                </button>
-              </div>
-            ))}
+          <div>
+            <input
+              type="text"
+              id="institution"
+              placeholder="Institution"
+            ></input>
+            <br></br>
+            <input
+              type="text"
+              id="qualification"
+              placeholder="Qualification"
+            ></input>
+            <br></br>
+            <input type="date" id="eduStart"></input>
+            <br></br>
+            <input type="date" id="eduEnd"></input>
+            <br></br>
+            <button
+              className="add"
+              id="add"
+              onClick={this.props.handleExtraInfo}
+            >
+              <span>Add</span>
+            </button>
+          </div>
         </form>
       </div>
     );
