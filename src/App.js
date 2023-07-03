@@ -107,36 +107,33 @@ const App = () => {
     return (
       <div className="inputs">
         <Personal handleContinue={handleContinue} />
-        <button className="continue" type="submit" onClick={handleContinue}>
-          <span>Continue</span>
-        </button>
       </div>
     );
   } else if (display === "skills") {
     return (
       <div className="inputs">
-        <Skills handleExtraInfo={handleExtraInfo} />
-        <button className="continue" type="submit" onClick={handleContinue}>
-          <span>Continue</span>
-        </button>
+        <Skills
+          handleExtraInfo={handleExtraInfo}
+          handleContinue={handleContinue}
+        />
       </div>
     );
   } else if (display === "experience") {
     return (
       <div className="inputs">
-        <Experience handleExtraInfo={handleExtraInfo} />
-        <button className="continue" type="submit" onClick={handleContinue}>
-          <span>Continue</span>
-        </button>
+        <Experience
+          handleExtraInfo={handleExtraInfo}
+          handleContinue={handleContinue}
+        />
       </div>
     );
   } else if (display === "education") {
     return (
       <div className="inputs">
-        <Education handleExtraInfo={handleExtraInfo} />
-        <button className="continue" type="submit" onClick={handleContinue}>
-          <span>Finish</span>
-        </button>
+        <Education
+          handleExtraInfo={handleExtraInfo}
+          handleContinue={handleContinue}
+        />
       </div>
     );
   } else if (display === "resume") {

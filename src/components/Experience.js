@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 
-const Experience = ({ handleExtraInfo }) => {
+const Experience = ({ handleExtraInfo, handleContinue }) => {
   return (
     <div id="jobInput">
-      <form>
+      <form onSubmit={handleContinue}>
         <div>
           <input
             type="text"
@@ -26,6 +26,9 @@ const Experience = ({ handleExtraInfo }) => {
           <br></br>
           <button className="add" id="add" onClick={handleExtraInfo}>
             <span>Add</span>
+          </button>
+          <button className="continue" type="submit">
+            <span>Continue</span>
           </button>
         </div>
       </form>

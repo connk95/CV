@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 
-const Education = ({ handleExtraInfo }) => {
+const Education = ({ handleExtraInfo, handleContinue }) => {
   return (
     <div id="educationInput">
-      <form>
+      <form onSubmit={handleContinue}>
         <div>
           <input type="text" id="institution" placeholder="Institution"></input>
           <br></br>
@@ -20,6 +20,9 @@ const Education = ({ handleExtraInfo }) => {
           <br></br>
           <button className="add" id="add" onClick={handleExtraInfo}>
             <span>Add</span>
+          </button>
+          <button className="continue" type="submit">
+            <span>Finish</span>
           </button>
         </div>
       </form>

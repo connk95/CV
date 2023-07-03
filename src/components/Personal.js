@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 
-const Personal = () => {
+const Personal = ({ handleContinue }) => {
   return (
     <div id="personalInput">
-      <form>
+      <form onSubmit={handleContinue}>
         <div>
           <input type="text" id="name" placeholder="Name" required></input>
           <br></br>
@@ -24,6 +24,9 @@ const Personal = () => {
           <br></br>
           <input type="text" id="address" placeholder="Address"></input>
           <br></br>
+          <button className="continue" type="submit">
+            <span>Continue</span>
+          </button>
         </div>
       </form>
     </div>
