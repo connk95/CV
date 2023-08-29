@@ -53,7 +53,7 @@ https://connk95.github.io/CV/
 
 [Resume.js](https://github.com/connk95/CV/blob/main/src/components/Resume.js) - Renders the final resume.
 
-[App.css](https://github.com/connk95/Shopping-Cart/blob/main/src/App.css) - CSS for the entire project.
+[App.css](https://github.com/connk95/CV/blob/main/src/App.css) - CSS for the entire project.
 
 ## Usage
 
